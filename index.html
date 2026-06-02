@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Webbot com Dashboard</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="src/app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="bot-panel" aria-label="Webbot">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Webbot com dashboard</p>
+            <h1>Atendimento demonstrativo</h1>
+          </div>
+          <button id="clearButton" type="button">Limpar dados</button>
+        </header>
+
+        <div class="channel-row">
+          <label for="channelSelect">Canal</label>
+          <select id="channelSelect">
+            <option value="Site">Site</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Instagram">Instagram</option>
+          </select>
+        </div>
+
+        <section class="chat-window" aria-label="Conversa">
+          <div id="messages" class="messages" aria-live="polite"></div>
+          <form id="botForm" class="composer">
+            <label class="sr-only" for="messageInput">Mensagem</label>
+            <input id="messageInput" type="text" autocomplete="off" placeholder="Ex.: Quero saber valores do curso">
+            <button type="submit">Enviar</button>
+          </form>
+        </section>
+
+        <div class="quick-actions" aria-label="Mensagens prontas">
+          <button type="button" data-message="Quero saber valores do curso de IA">Valores</button>
+          <button type="button" data-message="Quais horarios estao disponiveis?">Horarios</button>
+          <button type="button" data-message="Posso agendar uma visita?">Visita</button>
+          <button type="button" data-message="Meu filho gosta de robotica e jogos">Perfil</button>
+        </div>
+      </section>
+
+      <aside class="dashboard" aria-label="Dashboard">
+        <header>
+          <p class="eyebrow">Painel</p>
+          <h2>Indicadores do bot</h2>
+        </header>
+
+        <section class="metric-grid" aria-label="Metricas principais">
+          <article class="metric">
+            <span>Total</span>
+            <strong id="totalMetric">0</strong>
+          </article>
+          <article class="metric">
+            <span>Leads</span>
+            <strong id="leadMetric">0</strong>
+          </article>
+          <article class="metric">
+            <span>Satisfacao</span>
+            <strong id="scoreMetric">0%</strong>
+          </article>
+        </section>
+
+        <section class="chart-panel" aria-label="Assuntos mais frequentes">
+          <h3>Assuntos</h3>
+          <div id="topicChart" class="topic-chart"></div>
+        </section>
+
+        <section class="history-panel" aria-label="Historico recente">
+          <h3>Historico recente</h3>
+          <div id="historyList" class="history-list"></div>
+        </section>
+      </aside>
+    </main>
+  </body>
+</html>
